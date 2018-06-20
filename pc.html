@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="img/panda.ico" />
+    
+    <title>我的简历</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    
+    
+    
+    
+    <script src="js/jquery-3.3.1.js"></script>
+
+
+</head>
+
+<body>
+    
+    
+    <div id="home">
+        <!--设置悬浮的布局-->
+        <div id="fixed_icon">
+            <div id="set-bgcolor">
+                <a href="" class="bgcolor">
+                    <i class=" fa fa-television  fa-1x"></i>
+                </a>
+                <p>vision</p>
+                <ul class="bgcolor_select">
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                </ul>
+            </div>
+            
+            <a href="#" class="go-start"><i class="fa fa-hand-o-up"></i></a>
+        </div>
+        
+        <div class="home_son">
+            <div class="contend">
+                <div class="my">
+                    <img src="img/my.jpg" alt="图片无法显示">
+                    <h1>黄益凛</h1>
+                    <h1>WEB Engineer</h1>
+                    <h1>实习生</h1>
+                    <h2>我能做到的最好就是坚持</h2>
+                </div>
+                <div class="catalog">
+                    <ul class="fa-ul">
+                        <li>
+                            <a href="#about-mine">
+                                <i class="fa fa-info fa-3x"></i>
+                                &nbsp;&nbsp;<h3>关于我</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#my_skill"><i class="fa fa-briefcase fa-2x "></i>
+                                &nbsp;&nbsp;<h3>我的技能</h3>
+                            </a>
+                        </li>
+                        <li><a href="#project_experience">
+                            <i class="fa fa-file-powerpoint-o fa-2x fa-fw"></i>
+                            &nbsp;&nbsp;&nbsp;<h3>项目经验</h3>
+                        </a>
+                        </li>
+                        <li>
+                            <a href="#future_plan">
+                                <i class="fa fa-twitter fa-3x"></i>&nbsp;&nbsp;<h3>未来规划</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#employee_me"> <i class="fa fa-handshake-o fa-2x"></i>
+                                &nbsp;&nbsp;<h3>雇用我</h3>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            
+            
+            </div>
+        
+        
+        </div>
+    
+    
+    </div>
+    
+    
+    
+    <div id="about-mine">
+        <div class="about-mine-contend">
+            <div class="mind-card">
+                <p>黄益凛&nbsp;&nbsp;&nbsp; 22岁</p>
+                <p>本科&nbsp;&nbsp;&nbsp;通信工程 </p>
+                <p>东莞理工学院大四学生</p>
+                <p>13538355250&nbsp;&nbsp;1101127028@qq.com</p>
+            
+            </div>
+            <div class="mind-state">
+                <p>
+                    本人具有很强的自学和解决问题的能力，对新知识能很快上手掌握，
+                    对遇到的各种困难有足够的耐心和恒心排除解决。做事情认真负责，
+                    有强烈的责任心和上进心。有较强的逻辑思维，对项目能够提供解决方案。
+                    热爱编程，愿意以最大的热情投入到编程中。我坚持：活到老，学到老。
+                </p>
+            </div>
+        
+        </div>
+    
+    </div>
+    
+   
+    
+    
+    <div id="my_skill">
+        <div class="second_bg">
+            <div class="my_skill_contend">
+                <div>
+                    <canvas id="canvas1" width="150" height="150">70%</canvas>
+                    <h1>HTML/CSS</h1>
+                </div>
+                <div>
+                    <canvas id="canvas2" width="150" height="150">60%</canvas>
+                    <h1>HTML5/CSS3</h1>
+                </div>
+                <div>
+                    <canvas id="canvas3" width="150" height="150">68%</canvas>
+                    <h1>JS/JQ</h1>
+                </div>
+                <div>
+                    <canvas id="canvas4" width="150" height="150">70%</canvas>
+                    <h1>Android/JAVA</h1>
+                </div>
+                <div>
+                    <canvas id="canvas5" width="150" height="150">72%</canvas>
+                    <h1>STM32</h1>
+                </div>
+            
+            </div>
+        </div>
+    
+    
+    </div>
+    
+    <script>
+        function draw(context, i, color) {
+            // 最外层圆
+            context.beginPath();
+            context.lineWidth = 1;
+            context.arc(75, 75, 70, -Math.PI * .5, Math.PI * 3.5);
+            context.strokeStyle = color;
+            context.stroke();
+            // 圆环
+            context.beginPath();
+            context.arc(75, 75, 62, -Math.PI * .5, Math.PI * 1.5 * (i / 100));
+            context.lineWidth = 16;
+            context.strokeStyle = color;
+            context.stroke();
+            // 小圆
+            context.beginPath();
+            context.arc(75, 75, 55, -Math.PI * .5, Math.PI * 3.5);
+            context.lineWidth = 1;
+            context.strokeStyle = color;
+            context.stroke();
+            context.fillStyle = "rgba(255,255,255,0)";
+            context.fill();
+            // 字
+            context.beginPath();
+            context.textBaseline = "middle";
+            context.textAlign = "center";
+            context.font = "30px Arial";
+            context.fillStyle = color;
+            context.fillText(i + "%", 75, 75);
+        }
+
+        var drawCircle = function (id, color) {
+            var canvas = document.getElementById(id)
+            var context = canvas.getContext("2d")
+            var i = 0;
+            var progress = parseInt(canvas.innerHTML);
+            var timer = setInterval(function () {
+                if (i >= progress) {
+                    clearInterval(timer);
+                }
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                draw(context, i, color);
+                i++;
+            }, 20);
+        }
+
+        function drawMySkill(color) {
+            drawCircle("canvas1", color)
+            drawCircle("canvas2", color)
+            drawCircle("canvas3", color)
+            drawCircle("canvas4", color)
+            drawCircle("canvas5", color)
+            document.getElementById("my_skill").style.color = color;
+
+        }
+
+        drawMySkill("chartreuse")
+    
+    
+    </script>
+    
+    <script>
+        $.prototype["myToggle"] = function () {
+            if (arguments.length != 0) {
+                var arg = arguments;
+                var len = arg.length;
+                var that = this;
+                var i = 0;
+            } else {
+                this.click();
+            }
+
+            this.click(function () {
+                var fun = arg[i];
+                if (typeof fun == "function") {
+                    fun.call(that);
+                }
+                i++;
+                if (i == len) i = 0;
+                return false;
+            })
+        }
+
+        var setBgColor = function (i, color) {
+            $(".bgcolor_select li:eq(" + i + ")").click(function () {
+                drawMySkill(color)
+                $("body ").css({'color': color, "border-color": color});
+                if (color == 'white') {
+                    $(" .catalog i").css('background', 'black');
+                    $(".go-start").css('background', 'black');
+                    $(".bgcolor").css('background', 'black');
+
+                } else {
+                    $(" .catalog i").css('background', 'white');
+                    $(".go-start").css('background', 'white');
+                    $(".bgcolor").css('background', 'white');
+                }
+                $(".bgcolor").myToggle();
+            })
+        }
+
+        $(function () {
+            $(".bgcolor").myToggle(
+                function () {
+                    $("#set-bgcolor").css('left', '0px');
+                }, function () {
+                    $('#set-bgcolor').css('left', '-46px')
+                }
+            )
+
+            setBgColor(0, "white")
+            setBgColor(1, "blue")
+            setBgColor(2, "green")
+            setBgColor(3, "rgb(255,15,101)")
+
+
+        })
+    
+    
+    </script>
+    
+    
+    
+    <div id="project_experience">
+        <div class="project_experience_contend">
+            <h1>作品展示</h1>
+            <div class="project">
+                <div class="web_project">
+                    <h3>前端简历项目</h3>
+                    <p>
+                        <!-- &nbsp;&nbsp; &nbsp;&lt;!&ndash;&nbsp; &nbsp;&nbsp;&ndash;&gt;-->
+                        在学习过程中，曾模仿华为官网写出部分的页面， 但完整的项目，这个简历算是我的第一个前端项目。在该项
+                        目中综合使用了HTML/HTML5 、
+                        CSS/CSS3 和 JS/JQuery,更使用了Font Awesome图标字体库和css框架。做这个项目，我遇到了许多问题，
+                        很多预想的效果都毫无头绪，后来经过查资料，自己思考，终于实现一个个页面。可惜，该项目未曾写成响
+                        应式，故无法适应手机，但关于响应式网站的知识我正在积极学习中。
+                    
+                    </p>
+                
+                </div>
+                <div class="android_project">
+                    <h3>Android体侧系统</h3>
+                    <div class="contend">
+                        <img src="img/android1.png" alt="">
+                        <img src="img/android2.jpg" alt="">
+                        <img src="img/android3.jpg" alt="">
+                        <img src="img/android4.jpg" alt="">
+                        <img src="img/android5.jpg" alt="">
+                        <p>
+                            <!-- &nbsp;&nbsp; &lt;!&ndash;&nbsp;&ndash;&gt;&lt;!&ndash;&nbsp; &nbsp;&ndash;&gt;-->
+                            该项目分为两部分。一部分为使用stm32芯片还有心率体温血压测量模块测量数据，
+                            然后将这些数据通过蓝牙或wifi上传至手机。另一部分则是android上位机系统，
+                            该系统实现了wifi、蓝牙接收数据和人工输入数据并且根据数据判断健康状态，
+                            该系统还加入了SQLite数据库，使系统能够保存上传的数据和多个用户，还具有用户登录功能，
+                            并且可以图标显示所有的侧量数据
+                        
+                        </p>
+                    </div>
+                
+                
+                </div>
+            </div>
+        </div>
+    
+    </div>
+    
+    
+    
+    <div id="future_plan">
+        <div class="future_plan_contend">
+            <div class="future_plan_icon">
+                <h1>我想</h1>
+                <h1>要的未来 !</h1>
+                <div></div>
+            
+            </div>
+            <div class="future_plan_info">
+                <div>
+                    <p><!--&nbsp;&nbsp;&nbsp;&lt;!&ndash;&nbsp;&nbsp;&nbsp;&ndash;&gt;-->
+                       我是一个很有计划的人。当我来到大学后，经过大一的浑浑噩噩后，到大二我开始找寻我的方向，但此
+                       时的我对一切都是小白。所以我加入了实验室，在师兄的安排下我开始学习STM32，学习制作无人机。
+                       因为调试 无人机需要上位机，所以我开始学习JAVA。当我接触java以后，我开始被java语言的魅力所倾
+                       倒，我一连看了300集尚学堂录制的java基础知识视频，我这才发现原来软件工程才是我应该读的专业，
+                       但此时已经没法转专业，所以我开始利用几乎所有的课余时间自学，接着我又学了Android，C++，
+                       python语言。
+                    </p>
+                    <p><!--&nbsp;&nbsp;&nbsp;&lt;!&ndash;&nbsp;&nbsp;&nbsp;&ndash;&gt;-->
+                       到了大三以后我又开 始自学前端和PHP。此时我也意识到了一个问题，我学的东西太多太杂，
+                       没有一门是精通的，意识到这个以后 ，我知道我该做出选择了，综合考虑就业和兴趣，我讲我的未来压
+                       在了全端和PHP后端上。如今，我已掌握部分的前端知识，能够完成大部分页面和效果。但我知道还不
+                       够，所以我对我大四的一年做了这样的规划，在大四期间我将会找一份实习，在实践中精通HTML和
+                       CSS，js也要得到有效的提升，另外熟悉jQuery和 bootstrap框架。在这期间，我还需抓紧时间学习
+                       PHP，我要争取在毕业之前， 掌握web前端和PHP后端。
+                    </p>
+                </div>
+            
+            </div>
+        
+        
+        </div>
+    
+    </div>
+    
+    
+    
+    
+    <div id="employee_me">
+        <div class="emplyee_second_bg">
+            <div class="employee_me_contend">
+                <h1>雇用我</h1>
+                <p>或许我现在还不够优秀，但只要你给我一个机会，我便能为你创造足够的价值</p>
+                <p>我的电话：13538355250</p>
+                <p>我的E-mail：1101127028@qq.com</p>
+            </div>
+            <hr>
+            <p>ALL Right Reserved</p>
+            <p>粤ICP备18888888号Copyright&copy;2018-2019</p>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
