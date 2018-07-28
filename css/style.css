@@ -117,13 +117,14 @@ html, body {
     /*background: red;*/
     margin: auto;
     padding: 7% 0px;
-    display: flex;
+    display: block;
     background-clip: content-box;
 
 }
 
 .my {
-    flex-grow: 1;
+    display: inline-block;
+    width: 48%;
     max-width: 50%;
     text-align: center;
 }
@@ -146,8 +147,10 @@ html, body {
 }
 
 .catalog {
+    display: inline-block;
     max-width: 50%;
-    flex-grow: 1;
+    /*flex-grow: 1;*/
+    width: 48%;
 }
 
 .catalog ul {
@@ -408,24 +411,21 @@ hr {
 
 /*****************************************************/
 #future_plan {
-    height: 70%;
-    /*background: blue;*/
+    /*height: 70%;*/
+    height: 450px;
 }
 
 .future_plan_contend {
     width: 80%;
     margin: 0px auto;
     height: 100%;
-    /*background: red;*/
 }
 
 .future_plan_icon {
-    /*margin-top: 50px;*/
     width: 35%;
     height: 90%;
     float: left;
     display: inline-block;
-    /*border: 1px solid white;*/
     padding: 20px;
     color: rgb(255, 15, 101);
 }
@@ -455,9 +455,9 @@ hr {
 }
 
 .future_plan_info div {
-    margin-top: 60px;
+    margin-top: 50px;
     color: black;
-    font-size: 17px;
+    font-size: 18px;
 }
 
 .future_plan_info p {
@@ -466,7 +466,10 @@ hr {
 }
 
 
-
+#employee_me a{
+    text-decoration: none;
+    color: white;
+}
 
 
 
